@@ -1,3 +1,7 @@
+/*Form>Styles>Advanced styles>Embed CSS Code*/
+
+
+
 /* ===== Nintex Theme Overrides ===== */
 [dir] .nx-theme-styles .nx-theme-form { 
     background-color: #FFFFFF;
@@ -87,5 +91,14 @@
     }
 }
 
+
+/*Form>Insert Label>Text Source
+
+<p>
+    <img alt="Logo" src="https://gets.sharepoint.com/sites/SAOIntranet/SAO%20Branding%20%20Templates/SAO%20Logos/SAO%20Logo%202024_White.png" class="header-logo image-inline">
+</p>
+<p>
+    <span>My Modern Form Header</span>
+</p>*/
 
 

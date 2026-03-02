@@ -1,0 +1,110 @@
+/* ===== Nintex Theme Overrides ===== */
+[dir] .nx-theme-styles .nx-theme-form {
+    background-color: #FFFFFF;
+    border-color: #1B3664;
+    border-radius: 1pt;
+    color: #000000;
+}
+
+[dir] .nx-theme-styles .nx-group-control-container {
+    background-color: #ededed;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+[dir] .nx-theme-styles .nx-group-control-container .nx-group-control-body {
+    background-color: #ededed;
+}
+
+.nx-repeating-section-container {
+    background-color: #ededed;
+    border: 1px solid;
+    border-radius: 5px;
+
+}
+
+.nx-repeating-section-container .nx-repeating-section-body {
+    background-color: #ededed;
+}
+
+[dir] .nx-theme-styles .nx-theme-page {
+    background-color: #99C5C5;
+}
+
+[dir] .nx-theme-styles .nx-theme-form {
+    background-color: #ededed;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    text-align: right;
+    color: #1B3664;
+    font-size: large;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
+    background-color: #00829f;
+    color: #ffffff;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 50%;
+}
+
+.nx-theme-styles .nx-theme-button-1:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Custom Header with Image or Text Only ===== */
+
+/* Header container */
+[dir] .nx-theme-styles .nx-theme-form .custom-form-header {
+    background-color: #1B3664 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    display: flex !important;
+    align-items: left !important;
+    gap: 15px !important;
+}
+
+/* Image inside header */
+[dir] .nx-theme-styles .nx-theme-form .custom-form-header img {
+    height: 100px !important;
+    width: auto !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+    /* Prevent image from shrinking */
+}
+
+/* Text inside header (overrides inline styles) */
+[dir] .nx-theme-styles .nx-theme-form .custom-form-header span,
+[dir] .nx-theme-styles .nx-theme-form .custom-form-header span[style],
+[dir] .nx-theme-styles .nx-theme-form .custom-form-header .nf-field-label span,
+[dir] .nx-theme-styles .nx-theme-form .custom-form-header .nf-field-label span[style],
+[dir] .nx-theme-styles .nx-theme-form .custom-form-header .nf-field-label span * {
+    color: #FFFFFF !important;
+    font-size: 2.5rem !important;
+    font-weight: semibold !important;
+    font-family: 'Segoe UI', Arial, sans-serif !important;
+    line-height: 1.2 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    [dir] .nx-theme-styles .nx-theme-form .custom-form-header {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .custom-form-header img {
+        height: 40px !important;
+        margin-bottom: 8px !important;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .custom-form-header span,
+    [dir] .nx-theme-styles .nx-theme-form .custom-form-header span[style] {
+        font-size: 1.8rem !important;
+    }
+}

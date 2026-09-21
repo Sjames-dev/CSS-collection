@@ -1,396 +1,470 @@
 /* =========================================================
-   GA@WORK NINTEX THEME
+   GA@WORK NINTEX FORM THEME — DESIGN 01
+   Brand palette:
+     Blue       #235789
+     Light Blue #90C3C8
+     Orange     #F7921E
+     Green      #7FA267
+     Yellow     #F3B700
+     Red        #A72608
+     Gray       #B3B3B3
    ========================================================= */
 
 
-/* ===== Form ===== */
+/* =========================================================
+   1. PAGE + FORM SURFACES
+   ========================================================= */
 
-[dir] .nx-theme-styles .nx-theme-form {
-    background-color: #ededed;
-    border-color: #1B3664;
-    border-radius: 1pt;
-    color: #000000;
-}
-
-
-/* ===== Group Controls ===== */
-
-[dir] .nx-theme-styles .nx-group-control-container {
-    background-color: #ededed;
-    border-radius: 5px;
-    border: 1px solid;
-}
-
-[dir] .nx-theme-styles .nx-group-control-container .nx-group-control-body {
-    background-color: #ededed;
-}
-
-
-/* ===== Repeating Sections ===== */
-
-.nx-repeating-section-container {
-    background-color: #ededed;
-    border: 1px solid;
-    border-radius: 5px;
-}
-
-.nx-repeating-section-container .nx-repeating-section-body {
-    background-color: #ededed;
-}
-
-
-/* ===== Page Background ===== */
-
+/* Outer page background:
+   Light Blue is used at a restrained tint so the form remains
+   visually dominant and easy to read. */
 [dir] .nx-theme-styles .nx-theme-page {
-    background-color: #99C5C5;
+    background:
+        linear-gradient(
+            135deg,
+            #DDEEEF 0%,
+            #BBDADC 50%,
+            #90C3C8 100%
+        ) !important;
 }
 
-
-/* ===== Form Labels ===== */
-
-[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
-    text-align: left;
-    color: #1B3664;
-    font-size: medium;
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-break: normal;
-}
-
-
-/* ===== Buttons ===== */
-
-[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
-    background-color: #00829f;
-    color: #ffffff;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    font-weight: 700;
-    width: 50%;
-}
-
-.nx-theme-styles .nx-theme-button-1:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Main form canvas */
+[dir] .nx-theme-styles .nx-theme-form {
+    background-color: #F7F7F7 !important;
+    border: 1px solid #235789 !important;
+    border-radius: 8px !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 14px rgba(35, 87, 137, 0.15) !important;
 }
 
 
 /* =========================================================
-   GA@WORK HEADER - DESIGN 01
+   2. GA@WORK HEADER — DESIGN 01
    ========================================================= */
 
-
-/*
-IMPORTANT:
-Do NOT prefix these rules with:
-
-.nx-theme-styles .nx-theme-form
-
-The Nintex HTML control may not live beneath that exact
-DOM hierarchy.
-*/
-
-
 .ga-header {
-    box-sizing: border-box !important;
     width: 100% !important;
+    box-sizing: border-box !important;
     font-family: Arial, Helvetica, sans-serif !important;
 }
 
-
-/* ===== Header Container ===== */
-
 .ga-header-01 {
     position: relative !important;
-
     width: 100% !important;
-    min-height: 170px !important;
+    min-height: 180px !important;
+    overflow: hidden !important;
 
     display: flex !important;
     align-items: center !important;
-
-    overflow: hidden !important;
 
     padding: 24px 34px !important;
 
     background:
         linear-gradient(
             120deg,
-            #235789 0%,
-            #1c4d7c 55%,
-            #123d66 100%
+            #2B6499 0%,
+            #235789 45%,
+            #184773 100%
         ) !important;
 
     border-radius: 8px !important;
-
-    border: none !important;
     border-bottom: 6px solid #F7921E !important;
 
     box-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.18) !important;
+        0 4px 10px rgba(0, 0, 0, 0.18) !important;
 
     box-sizing: border-box !important;
 }
 
-
-/* ===== Left Content Area ===== */
-
 .ga-header-01-content {
     position: relative !important;
-
-    z-index: 5 !important;
-
+    z-index: 3 !important;
     width: calc(100% - 180px) !important;
 
     display: flex !important;
     flex-direction: column !important;
-
     align-items: flex-start !important;
     justify-content: center !important;
 }
 
-
-/* ===== GA@WORK Logo ===== */
-
 .ga-header-01-logo {
     display: block !important;
-
     width: auto !important;
     height: 82px !important;
-
     max-width: 100% !important;
-
     object-fit: contain !important;
-
     margin: 0 !important;
     padding: 0 !important;
-
-    border: 0 !important;
 }
 
-
-/* ===== Header Title ===== */
-
 .ga-header-01 .ga-header-title {
-    display: block !important;
-
-    margin: 8px 0 0 0 !important;
+    margin: 9px 0 0 0 !important;
     padding: 0 !important;
 
     color: #FFFFFF !important;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif !important;
-
+    font-family: Arial, Helvetica, sans-serif !important;
     font-size: 2rem !important;
     font-weight: 400 !important;
-
     line-height: 1.2 !important;
 
     text-align: left !important;
-
     white-space: normal !important;
-
-    letter-spacing: 0 !important;
 }
-
-
-/* =========================================================
-   GEORGIA STATE GRAPHIC
-   ========================================================= */
 
 .ga-header-01-state {
     position: absolute !important;
-
     top: 50% !important;
-    right: 28px !important;
-
+    right: 34px !important;
     transform: translateY(-50%) !important;
 
-    width: 140px !important;
-    height: 140px !important;
+    width: 135px !important;
+    height: 145px !important;
 
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
 
     opacity: 0.18 !important;
-
     z-index: 1 !important;
-
     pointer-events: none !important;
 }
 
-
 .ga-header-01-state img {
     display: block !important;
-
     width: 100% !important;
     height: 100% !important;
-
     max-width: 100% !important;
     max-height: 100% !important;
-
     object-fit: contain !important;
-
     margin: 0 !important;
     padding: 0 !important;
-
-    border: 0 !important;
 }
 
 
 /* =========================================================
-   REMOVE NINTEX / EDITOR IMAGE SIDE EFFECTS
+   3. LABELS + FIELD TEXT
    ========================================================= */
 
-/*
-Nintex rich-text/HTML controls sometimes add image classes
-or inherited rules. These override them specifically inside
-our custom header.
-*/
-
-.ga-header-01 img,
-.ga-header-01 img.image-inline,
-.ga-header-01 img.image_resized,
-.ga-header-01 img.header-logo {
-    float: none !important;
-    position: static;
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    color: #235789 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
 }
 
-
-/*
-Restore absolute positioning for the Georgia container.
-The actual image inside remains normal flow.
-*/
-
-.ga-header-01-state {
-    position: absolute !important;
+/* Helper/descriptive text inside ordinary controls */
+[dir] .nx-theme-styles .nx-theme-form small,
+[dir] .nx-theme-styles .nx-theme-form .description {
+    color: #5F6368;
 }
 
 
 /* =========================================================
-   TABLET
+   4. INPUTS, TEXTAREAS + SELECTS
+   Low-risk generic selectors catch standard Nintex-rendered
+   HTML controls while leaving checkboxes/radios alone.
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-theme-form input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]),
+[dir] .nx-theme-styles .nx-theme-form textarea,
+[dir] .nx-theme-styles .nx-theme-form select {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+
+    border: 1px solid #B3B3B3 !important;
+    border-radius: 5px !important;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):hover,
+[dir] .nx-theme-styles .nx-theme-form textarea:hover,
+[dir] .nx-theme-styles .nx-theme-form select:hover {
+    border-color: #235789 !important;
+}
+
+/* Accessible brand focus treatment */
+[dir] .nx-theme-styles .nx-theme-form input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):focus,
+[dir] .nx-theme-styles .nx-theme-form textarea:focus,
+[dir] .nx-theme-styles .nx-theme-form select:focus {
+    outline: none !important;
+    border-color: #235789 !important;
+    box-shadow: 0 0 0 3px rgba(144, 195, 200, 0.40) !important;
+}
+
+
+/* =========================================================
+   5. GROUP / SECTION CONTAINERS
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-group-control-container {
+    overflow: hidden !important;
+
+    background-color: #FFFFFF !important;
+
+    border: 1px solid #C9D8E4 !important;
+    border-radius: 7px !important;
+
+    box-shadow: 0 1px 4px rgba(35, 87, 137, 0.08) !important;
+}
+
+[dir] .nx-theme-styles .nx-group-control-container .nx-group-control-body {
+    background-color: #FFFFFF !important;
+}
+
+/* If Nintex renders a heading as a label inside a group,
+   keep the heading in brand blue. */
+[dir] .nx-theme-styles .nx-group-control-container .nx-theme-label-1 {
+    color: #235789 !important;
+}
+
+
+/* =========================================================
+   6. REPEATING SECTIONS
+   ========================================================= */
+
+.nx-repeating-section-container {
+    background-color: #FFFFFF !important;
+
+    border: 1px solid #C9D8E4 !important;
+    border-left: 4px solid #90C3C8 !important;
+
+    border-radius: 7px !important;
+
+    box-shadow: 0 1px 4px rgba(35, 87, 137, 0.08) !important;
+}
+
+.nx-repeating-section-container .nx-repeating-section-body {
+    background-color: #FFFFFF !important;
+}
+
+
+/* =========================================================
+   7. PRIMARY BUTTONS
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
+    background-color: #235789 !important;
+    color: #FFFFFF !important;
+
+    border: 1px solid #235789 !important;
+    border-radius: 5px !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.025em !important;
+
+    text-transform: uppercase !important;
+
+    min-height: 42px !important;
+    padding: 8px 24px !important;
+
+    box-shadow: 0 2px 4px rgba(35, 87, 137, 0.18) !important;
+
+    transition:
+        background-color 0.15s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover {
+    background-color: #184773 !important;
+    border-color: #184773 !important;
+
+    transform: translateY(-1px) !important;
+
+    box-shadow: 0 4px 7px rgba(35, 87, 137, 0.25) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:focus {
+    outline: none !important;
+    box-shadow:
+        0 0 0 3px rgba(144, 195, 200, 0.50),
+        0 3px 6px rgba(35, 87, 137, 0.20) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 2px rgba(35, 87, 137, 0.20) !important;
+}
+
+
+/* =========================================================
+   8. SECONDARY / UTILITY BUTTON IDEA
+   Apply class "ga-button-secondary" where Nintex permits
+   a custom class on an HTML/custom button.
+   ========================================================= */
+
+.ga-button-secondary {
+    background-color: #FFFFFF !important;
+    color: #235789 !important;
+
+    border: 2px solid #235789 !important;
+    border-radius: 5px !important;
+
+    font-weight: 700 !important;
+    padding: 8px 22px !important;
+}
+
+.ga-button-secondary:hover {
+    background-color: #EEF5F8 !important;
+}
+
+
+/* =========================================================
+   9. CALLOUT / NOTE PANEL
+   Optional class for explanatory HTML blocks.
+   ========================================================= */
+
+.ga-form-note {
+    background-color: #F0F7F8 !important;
+
+    border: 1px solid #90C3C8 !important;
+    border-left: 5px solid #235789 !important;
+
+    border-radius: 6px !important;
+
+    color: #000000 !important;
+
+    padding: 12px 16px !important;
+    margin: 12px 0 !important;
+}
+
+.ga-form-note strong,
+.ga-form-note .ga-form-note-title {
+    color: #235789 !important;
+}
+
+
+/* =========================================================
+   10. WARNING / IMPORTANT PANEL
+   Use sparingly for genuinely important form instructions.
+   ========================================================= */
+
+.ga-form-warning {
+    background-color: #FFF7E8 !important;
+
+    border: 1px solid #F3B700 !important;
+    border-left: 5px solid #F7921E !important;
+
+    border-radius: 6px !important;
+
+    color: #000000 !important;
+
+    padding: 12px 16px !important;
+}
+
+
+/* =========================================================
+   11. TABLES USED IN HTML/RICH TEXT CONTROLS
+   ========================================================= */
+
+.ga-form-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    background-color: #FFFFFF !important;
+}
+
+.ga-form-table th {
+    background-color: #235789 !important;
+    color: #FFFFFF !important;
+    text-align: left !important;
+    padding: 10px 12px !important;
+}
+
+.ga-form-table td {
+    border-bottom: 1px solid #DADCE0 !important;
+    padding: 10px 12px !important;
+}
+
+.ga-form-table tr:nth-child(even) td {
+    background-color: #F5F9FA !important;
+}
+
+
+/* =========================================================
+   12. LINKS
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-theme-form a {
+    color: #235789 !important;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form a:hover {
+    color: #A72608 !important;
+}
+
+
+/* =========================================================
+   13. RESPONSIVE HEADER
    ========================================================= */
 
 @media (max-width: 900px) {
-
     .ga-header-01 {
         min-height: 150px !important;
-
-        padding:
-            22px
-            26px !important;
+        padding: 22px 26px !important;
     }
-
 
     .ga-header-01-content {
         width: calc(100% - 145px) !important;
     }
 
-
     .ga-header-01-logo {
         height: 68px !important;
     }
-
 
     .ga-header-01 .ga-header-title {
         font-size: 1.7rem !important;
     }
 
-
     .ga-header-01-state {
-        width: 115px !important;
-        height: 115px !important;
-
+        width: 110px !important;
+        height: 125px !important;
         right: 22px !important;
     }
-
 }
 
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
 @media (max-width: 600px) {
-
     .ga-header-01 {
         min-height: 125px !important;
-
-        padding:
-            18px
-            20px !important;
-
+        padding: 18px 20px !important;
         border-bottom-width: 5px !important;
     }
-
 
     .ga-header-01-content {
         width: calc(100% - 75px) !important;
     }
 
-
     .ga-header-01-logo {
         height: 50px !important;
     }
 
-
     .ga-header-01 .ga-header-title {
         margin-top: 7px !important;
-
         font-size: 1.3rem !important;
-        line-height: 1.25 !important;
     }
 
-
     .ga-header-01-state {
-        width: 80px !important;
+        width: 70px !important;
         height: 80px !important;
-
-        right: 8px !important;
-
-        opacity: 0.11 !important;
+        right: 7px !important;
+        opacity: 0.12 !important;
     }
 
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 400px) {
-
-    .ga-header-01 {
-        padding:
-            16px
-            16px !important;
+    /* Buttons are easier to use full-width on narrow screens */
+    [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
+        width: 100% !important;
     }
-
-
-    .ga-header-01-content {
-        width: calc(100% - 50px) !important;
-    }
-
-
-    .ga-header-01-logo {
-        height: 42px !important;
-    }
-
-
-    .ga-header-01 .ga-header-title {
-        font-size: 1.15rem !important;
-    }
-
-
-    .ga-header-01-state {
-        width: 65px !important;
-        height: 65px !important;
-
-        right: 2px !important;
-    }
-
 }

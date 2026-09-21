@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design 11 - Image Backdrop</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body { margin: 0; }
+.nx-theme-page { min-height: 100vh; padding: 24px; box-sizing: border-box; }
+.nx-theme-form { max-width: 900px; margin: auto; padding: 28px; }
+.preview-fields { display: grid; gap: 12px; margin: 24px 0; }
+.preview-fields input, .preview-fields select { width: 100%; padding: 8px 12px; border: 1px solid #cbd8e2; background: white; color: #213b50; }
+.preview-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
+@media(max-width: 480px) { .nx-theme-page { padding: 12px; } .nx-theme-form { padding: 14px; } }
+</style>
+</head>
+<body class="nx-theme-styles">
+<main class="nx-theme-page">
+<form class="nx-theme-form" onsubmit="return false">
+<!-- Replace all three image placeholders with hosted direct image URLs.
+     Use capitol-backdrop-generated.png for capitol-backdrop-generated.png. -->
+<div class="ga-header ga-header-11">
+    <img class="ga-header-11-photo" src="capitol-backdrop-generated.png" alt="" aria-hidden="true">
+    <div class="ga-header-11-content">
+        <div class="ga-header-11-brand">
+            <img class="ga-header-11-logo" src="../ga@work_logo_white.png" alt="GA@WORK">
+            <img class="ga-header-11-accent" src="../GA@WORK_LOGO_FullColor.png" alt="" aria-hidden="true">
+        </div>
+        <div class="ga-header-title">Worktag Maintenance Forms</div>
+    </div>
+</div>
+
+
+
+
+
+<div class="preview-fields">
+<label class="nx-theme-label-1" for="worktag">Worktag name</label>
+<input id="worktag" type="text" placeholder="Enter worktag name">
+<label class="nx-theme-label-1" for="request">Request type</label>
+<select id="request"><option>Create a worktag</option><option>Update a worktag</option></select>
+</div>
+<div class="preview-actions">
+<button class="nx-theme-button-2" type="button">Cancel</button>
+<button class="nx-theme-button-1" type="submit">Submit</button>
+</div>
+</form>
+</main>
+</body>
+</html>
+
+
+
+
+
+
+

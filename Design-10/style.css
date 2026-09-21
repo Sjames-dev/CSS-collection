@@ -1,4 +1,4 @@
-/* Design 07: complete form theme. Replace previous custom CSS with this file.
+/* Design 10: complete form theme. Replace previous custom CSS with this file.
    Theme selectors match the nx-theme classes used by the existing form.
    Header rules also work outside the Nintex shell for local previews. */
 
@@ -110,83 +110,125 @@
     cursor: not-allowed;
 }
 
-/* Bands are painted on the banner itself: no empty spans for an editor to strip.
-   At the reference width (562px), the banner is approximately 126px tall. */
-.ga-header.ga-header-07 {
-    box-sizing: border-box;
+/* Capitol photo + Design 09 waves. Images are supplied through header.html. */
+.ga-header.ga-header-10 {
     position: relative;
+    isolation: isolate;
+    box-sizing: border-box;
     width: 100%;
-    min-height: 126px;
-    padding: 15px 8%;
+    min-height: 250px;
+    padding: 38px 6% 70px;
     overflow: hidden;
-    border: 0;
     border-radius: 8px;
-    background-color: #073b65;
-    background-image:
-        linear-gradient(120deg, transparent 0%, transparent 76%, #4185aa 76%, #4185aa 81%, #8bc1cb 81%, #8bc1cb 86%, #f9a01b 86%, #f9a01b 91%, transparent 91%),
-        linear-gradient(110deg, #07365e 0%, #064775 65%, #155c8c 100%);
-    box-shadow: 0 2px 5px rgba(7, 40, 66, .18);
+    background: linear-gradient(105deg, #092e52 0%, #174f81 55%, #497ead 100%);
+    box-shadow: 0 3px 10px rgba(7, 40, 66, .16);
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
 }
 
-.ga-header-07 .ga-header-07-content {
-    position: relative;
-    width: 75%;
-    max-width: 480px;
-    margin: 0;
-    padding: 0;
-}
-
-.ga-header-07 .ga-header-07-brand {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    line-height: 0;
-}
-
-/* Both supplied PNGs have identical dimensions (1491 x 240).
-   Overlay only the full-color logo's orange symbol, leaving white letters. */
-.ga-header-07 .ga-header-07-brand .ga-header-07-logo,
-.ga-header-07 .ga-header-07-brand .ga-header-07-accent {
-    display: block;
-    box-sizing: border-box;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
+.ga-header-10 .ga-header-10-photo {
+    position: absolute;
+    z-index: -3;
+    top: -3%;
+    right: 3%;
+    width: auto !important;
+    height: 112% !important;
+    max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
     border: 0 !important;
 }
 
-.ga-header-07 .ga-header-07-brand .ga-header-07-accent {
+/* One continuous dark-to-light blue field; fade the photo edges into it. */
+.ga-header.ga-header-10::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(9, 46, 82, .35) 0%, rgba(23, 79, 129, .1) 60%, transparent 78%);
+    pointer-events: none;
+}
+
+.ga-header.ga-header-10::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: auto 0 0;
+    height: 36px;
+    background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20562%2076%22%20preserveAspectRatio%3D%22none%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22orange%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f8c35d%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f7921e%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M0%2012%20C110%2068%20235%2068%20365%2036%20C245%2078%2096%2093%200%2046%20Z%22%20fill%3D%22%231b5988%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M108%2076%20C280%2079%20434%20-4%20562%207%20L562%2076%20Z%22%20fill%3D%22%239dcbd7%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M0%2046%20C42%2065%2086%2075%20135%2076%20L0%2076%20Z%22%20fill%3D%22url%28%23orange%29%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M365%2076%20C443%2054%20503%2025%20562%2023%20L562%2076%20Z%22%20fill%3D%22url%28%23orange%29%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M0%2046%20C42%2065%2086%2075%20135%2076%20M365%2076%20C443%2054%20503%2025%20562%2023%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222%22%2F%3E%0A%3C%2Fsvg%3E") center bottom / 100% 100% no-repeat;
+    pointer-events: none;
+}
+
+.ga-header-10 .ga-header-10-content {
+    position: relative;
+    width: 68%;
+    max-width: 490px;
+    margin: 0;
+    padding: 0;
+}
+
+.ga-header-10 .ga-header-10-logo,
+.ga-header-10 .ga-header-10-accent {
+    display: block;
+    box-sizing: border-box;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.ga-header-10 .ga-header-title {
+    margin: 10px 0 0 !important;
+    padding: 0 !important;
+    color: #ffffff !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: clamp(17px, 2.5vw, 27px) !important;
+    font-weight: 400 !important;
+    line-height: 1.25 !important;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.ga-capitol-credit {
+    margin: 8px 0 0;
+    color: #526779;
+    font: 11px/1.5 Arial, Helvetica, sans-serif;
+    text-align: right;
+}
+.ga-capitol-credit a { color: #315774; text-decoration: underline; }
+.ga-capitol-credit a:focus-visible { outline: 2px solid #175a89; outline-offset: 2px; }
+
+@media (max-width: 480px) {
+    .ga-header.ga-header-10 {
+        min-height: 190px;
+        padding: 28px 6% 54px;
+    }
+    .ga-header-10 .ga-header-10-content { width: 76%; }
+    .ga-header.ga-header-10::before {
+        background: linear-gradient(90deg, rgba(9, 46, 82, .4), rgba(23, 79, 129, .25) 70%, transparent);
+    }
+    .ga-header.ga-header-10::after { height: 28px; }
+}
+
+/* Blend the rectangular photo into the continuous blue background. */
+.ga-header-10 .ga-header-10-photo {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 24%, #000 86%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 24%, #000 86%, transparent);
+}
+
+.ga-header-10 .ga-header-10-brand {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+}
+
+/* Supplied logo assets have matching dimensions; expose only the orange O. */
+.ga-header-10 .ga-header-10-accent {
     position: absolute;
     top: 0;
     left: 0;
     clip-path: inset(0 23.8% 0 61.2%);
     pointer-events: none;
-}
-
-.ga-header-07 .ga-header-title {
-    margin: 6px 0 0 !important;
-    padding: 0 !important;
-    color: #ffffff !important;
-    font-family: Arial, Helvetica, sans-serif !important;
-    font-size: clamp(16px, 2.5vw, 26px) !important;
-    font-weight: 400 !important;
-    line-height: 1.2 !important;
-    white-space: normal;
-    overflow-wrap: break-word;
-}
-
-@media (max-width: 480px) {
-    .ga-header.ga-header-07 {
-        min-height: 104px;
-        padding: 18px 6%;
-    }
-
-    .ga-header-07 .ga-header-07-content {
-        width: 78%;
-    }
 }

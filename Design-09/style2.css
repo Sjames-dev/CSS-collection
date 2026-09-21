@@ -1,0 +1,174 @@
+/* Design 09: complete form theme. Replace previous custom CSS with this file.
+   Theme selectors match the nx-theme classes used by the existing form.
+   Header rules also work outside the Nintex shell for local previews. */
+
+.nx-theme-styles {
+    --ga-navy: #073b65;
+    --ga-blue: #175a89;
+    --ga-orange: #f7921e;
+    --ga-border: #cbd8e2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+[dir] .nx-theme-styles .nx-theme-page,
+[dir] .nx-theme-styles.nx-theme-page {
+    background: #eef3f7;
+    color: #213b50;
+}
+
+[dir] .nx-theme-styles .nx-theme-form {
+    background: #ffffff;
+    border: 1px solid #d8e2ea;
+    border-radius: 10px;
+    color: #213b50;
+    box-shadow: 0 4px 18px rgba(7, 59, 101, .08);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-group-control-container,
+[dir] .nx-theme-styles .nx-theme-form .nx-repeating-section-container {
+    background: #f6f9fb;
+    border: 1px solid #cbd8e2;
+    border-radius: 6px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-group-control-body,
+[dir] .nx-theme-styles .nx-theme-form .nx-repeating-section-body {
+    background: #f6f9fb;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    color: #073b65;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: start;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* Excludes checkbox, radio, file and action inputs. Keep Nintex validation colors. */
+[dir] .nx-theme-styles .nx-theme-form input:where(:not([type]), [type="text"], [type="email"], [type="number"], [type="tel"], [type="url"], [type="password"], [type="search"], [type="date"], [type="datetime-local"]),
+[dir] .nx-theme-styles .nx-theme-form textarea,
+[dir] .nx-theme-styles .nx-theme-form select {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-height: 42px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form input:focus-visible,
+[dir] .nx-theme-styles .nx-theme-form textarea:focus-visible,
+[dir] .nx-theme-styles .nx-theme-form select:focus-visible {
+    outline: 2px solid #175a89;
+    outline-offset: 2px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1,
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2 {
+    box-sizing: border-box;
+    width: auto;
+    max-width: 100%;
+    min-width: 140px;
+    min-height: 44px;
+    padding: 10px 26px;
+    border: 1px solid #073b65;
+    border-radius: 5px;
+    background: #073b65;
+    color: #ffffff;
+    font: 700 16px/1.25 Arial, Helvetica, sans-serif;
+    text-transform: none;
+    cursor: pointer;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2 {
+    background: #ffffff;
+    color: #073b65;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover:not(:disabled):not([aria-disabled="true"]) {
+    background: #175a89;
+    border-color: #175a89;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:hover:not(:disabled):not([aria-disabled="true"]) {
+    background: #eaf2f7;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:focus-visible,
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:focus-visible {
+    outline: 3px solid #f7921e;
+    outline-offset: 3px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:disabled,
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:disabled,
+[dir] .nx-theme-styles .nx-theme-form [aria-disabled="true"] {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+/* The wave artwork is embedded so it survives removal of empty HTML elements.
+   Editable source: header-waves.svg. Keep the data URI in sync with that file. */
+.ga-header.ga-header-09 {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    min-height: 154px;
+    padding: 20px 9.5% 50px;
+    overflow: hidden;
+    border: 1px solid #e0e6eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20562%2076%22%20preserveAspectRatio%3D%22none%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22orange%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f8c35d%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f7921e%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M0%2012%20C110%2068%20235%2068%20365%2036%20C245%2078%2096%2093%200%2046%20Z%22%20fill%3D%22%231b5988%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M108%2076%20C280%2079%20434%20-4%20562%207%20L562%2076%20Z%22%20fill%3D%22%239dcbd7%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M0%2046%20C42%2065%2086%2075%20135%2076%20L0%2076%20Z%22%20fill%3D%22url%28%23orange%29%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M365%2076%20C443%2054%20503%2025%20562%2023%20L562%2076%20Z%22%20fill%3D%22url%28%23orange%29%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M0%2046%20C42%2065%2086%2075%20135%2076%20M365%2076%20C443%2054%20503%2025%20562%2023%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222%22%2F%3E%0A%3C%2Fsvg%3E");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 76px;
+    box-shadow: 0 2px 5px rgba(7, 40, 66, .12);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+.ga-header-09 .ga-header-09-content {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.ga-header-09 .ga-header-09-logo {
+    display: block;
+    box-sizing: border-box;
+    width: 68% !important;
+    max-width: 460px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.ga-header-09 .ga-header-title {
+    margin: 5px 0 0 !important;
+    padding: 0 !important;
+    color: #080808 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: clamp(17px, 2.5vw, 24px) !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 480px) {
+    .ga-header.ga-header-09 {
+        min-height: 132px;
+        padding: 18px 7% 54px;
+        background-size: 100% 52px;
+    }
+
+    .ga-header-09 .ga-header-09-logo {
+        width: 86% !important;
+    }
+}

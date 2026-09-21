@@ -1,0 +1,174 @@
+/* =========================================================
+   GA@WORK Nintex - Shared Theme Overrides
+   ========================================================= */
+
+/* Form shell */
+[dir] .nx-theme-styles .nx-theme-form {
+    background-color: #ededed;
+    border-color: #1B3664;
+    border-radius: 1pt;
+    color: #000000;
+}
+
+/* Group controls */
+[dir] .nx-theme-styles .nx-group-control-container {
+    background-color: #ededed;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+[dir] .nx-theme-styles .nx-group-control-container .nx-group-control-body {
+    background-color: #ededed;
+}
+
+/* Repeating sections */
+.nx-repeating-section-container {
+    background-color: #ededed;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.nx-repeating-section-container .nx-repeating-section-body {
+    background-color: #ededed;
+}
+
+/* Page background */
+[dir] .nx-theme-styles .nx-theme-page {
+    background-color: #99C5C5;
+}
+
+/* Standard labels */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    text-align: left;
+    color: #1B3664;
+    font-size: medium;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+/* Primary button */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
+    background-color: #00829f;
+    color: #ffffff;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 50%;
+}
+
+.nx-theme-styles .nx-theme-button-1:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Shared GA@WORK header reset */
+[dir] .nx-theme-styles .nx-theme-form .ga-header {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header img {
+    max-width: 100%;
+    border: 0;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-title {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+
+/* =========================================================
+   DESIGN 09
+   White Header + Layered Brand Waves
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-09 {
+    position: relative;
+    overflow: hidden;
+    min-height: 175px;
+    padding: 22px 32px 52px;
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-09-content {
+    position: relative;
+    z-index: 10;
+    width: 72%;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-09-logo {
+    display: block;
+    height: 78px !important;
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-09 .ga-header-title {
+    margin-top: 6px;
+    color: #000000 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-09-wave {
+    position: absolute;
+    width: 120%;
+    left: -10%;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    pointer-events: none;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-09 .wave-blue {
+    height: 74px;
+    bottom: -43px;
+    background-color: #235789;
+    transform: rotate(1.5deg);
+    z-index: 5;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-09 .wave-lightblue {
+    height: 68px;
+    bottom: -33px;
+    left: 18%;
+    background-color: #90C3C8;
+    transform: rotate(-2deg);
+    z-index: 4;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-09 .wave-orange {
+    height: 72px;
+    bottom: -39px;
+    left: 60%;
+    background-color: #F7921E;
+    transform: rotate(-5deg);
+    z-index: 3;
+}
+
+@media (max-width: 700px) {
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-09 {
+        min-height: 140px;
+        padding: 18px 20px 45px;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-09-content {
+        width: 90%;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-09-logo {
+        height: 52px !important;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-09 .ga-header-title {
+        font-size: 1.4rem !important;
+    }
+}

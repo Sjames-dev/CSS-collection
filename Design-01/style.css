@@ -1,0 +1,174 @@
+/* =========================================================
+   GA@WORK Nintex - Shared Theme Overrides
+   ========================================================= */
+
+/* Form shell */
+[dir] .nx-theme-styles .nx-theme-form {
+    background-color: #ededed;
+    border-color: #1B3664;
+    border-radius: 1pt;
+    color: #000000;
+}
+
+/* Group controls */
+[dir] .nx-theme-styles .nx-group-control-container {
+    background-color: #ededed;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+[dir] .nx-theme-styles .nx-group-control-container .nx-group-control-body {
+    background-color: #ededed;
+}
+
+/* Repeating sections */
+.nx-repeating-section-container {
+    background-color: #ededed;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.nx-repeating-section-container .nx-repeating-section-body {
+    background-color: #ededed;
+}
+
+/* Page background */
+[dir] .nx-theme-styles .nx-theme-page {
+    background-color: #99C5C5;
+}
+
+/* Standard labels */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    text-align: left;
+    color: #1B3664;
+    font-size: medium;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+/* Primary button */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
+    background-color: #00829f;
+    color: #ffffff;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 50%;
+}
+
+.nx-theme-styles .nx-theme-button-1:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Shared GA@WORK header reset */
+[dir] .nx-theme-styles .nx-theme-form .ga-header {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header img {
+    max-width: 100%;
+    border: 0;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-title {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+
+/* =========================================================
+   DESIGN 01
+   Blue Header + Georgia State Silhouette
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-01 {
+    position: relative;
+    overflow: hidden;
+    min-height: 160px;
+    padding: 22px 32px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        120deg,
+        #235789 0%,
+        #164775 65%,
+        #0f3c65 100%
+    );
+    border-radius: 8px;
+    border-bottom: 6px solid #F7921E;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-01-content {
+    position: relative;
+    z-index: 2;
+    width: 75%;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-01-logo {
+    display: block;
+    width: auto !important;
+    height: 82px !important;
+    max-width: 100% !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-01 .ga-header-title {
+    margin-top: 8px;
+    color: #FFFFFF !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 2rem !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-01-state {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 135px;
+    height: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.22;
+    z-index: 1;
+    pointer-events: none;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-01-state img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+}
+
+@media (max-width: 700px) {
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-01 {
+        min-height: 128px;
+        padding: 18px 20px;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-01-content {
+        width: 82%;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-01-logo {
+        height: 54px !important;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-01 .ga-header-title {
+        font-size: 1.45rem !important;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-01-state {
+        right: 10px;
+        width: 90px;
+        height: 90px;
+        opacity: 0.12;
+    }
+}

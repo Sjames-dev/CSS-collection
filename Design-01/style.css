@@ -1,8 +1,10 @@
 /* =========================================================
-   GA@WORK Nintex - Shared Theme Overrides
+   GA@WORK NINTEX THEME
    ========================================================= */
 
-/* Form shell */
+
+/* ===== Form ===== */
+
 [dir] .nx-theme-styles .nx-theme-form {
     background-color: #ededed;
     border-color: #1B3664;
@@ -10,7 +12,9 @@
     color: #000000;
 }
 
-/* Group controls */
+
+/* ===== Group Controls ===== */
+
 [dir] .nx-theme-styles .nx-group-control-container {
     background-color: #ededed;
     border-radius: 5px;
@@ -21,7 +25,9 @@
     background-color: #ededed;
 }
 
-/* Repeating sections */
+
+/* ===== Repeating Sections ===== */
+
 .nx-repeating-section-container {
     background-color: #ededed;
     border: 1px solid;
@@ -32,12 +38,16 @@
     background-color: #ededed;
 }
 
-/* Page background */
+
+/* ===== Page Background ===== */
+
 [dir] .nx-theme-styles .nx-theme-page {
     background-color: #99C5C5;
 }
 
-/* Standard labels */
+
+/* ===== Form Labels ===== */
+
 [dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
     text-align: left;
     color: #1B3664;
@@ -47,7 +57,9 @@
     word-break: normal;
 }
 
-/* Primary button */
+
+/* ===== Buttons ===== */
+
 [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
     background-color: #00829f;
     color: #ffffff;
@@ -62,113 +74,323 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Shared GA@WORK header reset */
-[dir] .nx-theme-styles .nx-theme-form .ga-header {
-    width: 100%;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+
+/* =========================================================
+   GA@WORK HEADER - DESIGN 01
+   ========================================================= */
+
+
+/*
+IMPORTANT:
+Do NOT prefix these rules with:
+
+.nx-theme-styles .nx-theme-form
+
+The Nintex HTML control may not live beneath that exact
+DOM hierarchy.
+*/
+
+
+.ga-header {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    font-family: Arial, Helvetica, sans-serif !important;
 }
 
-[dir] .nx-theme-styles .nx-theme-form .ga-header img {
-    max-width: 100%;
-    border: 0;
+
+/* ===== Header Container ===== */
+
+.ga-header-01 {
+    position: relative !important;
+
+    width: 100% !important;
+    min-height: 170px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    overflow: hidden !important;
+
+    padding: 24px 34px !important;
+
+    background:
+        linear-gradient(
+            120deg,
+            #235789 0%,
+            #1c4d7c 55%,
+            #123d66 100%
+        ) !important;
+
+    border-radius: 8px !important;
+
+    border: none !important;
+    border-bottom: 6px solid #F7921E !important;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.18) !important;
+
+    box-sizing: border-box !important;
 }
 
-[dir] .nx-theme-styles .nx-theme-form .ga-header-title {
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-break: normal;
+
+/* ===== Left Content Area ===== */
+
+.ga-header-01-content {
+    position: relative !important;
+
+    z-index: 5 !important;
+
+    width: calc(100% - 180px) !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: flex-start !important;
+    justify-content: center !important;
+}
+
+
+/* ===== GA@WORK Logo ===== */
+
+.ga-header-01-logo {
+    display: block !important;
+
+    width: auto !important;
+    height: 82px !important;
+
+    max-width: 100% !important;
+
+    object-fit: contain !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+}
+
+
+/* ===== Header Title ===== */
+
+.ga-header-01 .ga-header-title {
+    display: block !important;
+
+    margin: 8px 0 0 0 !important;
+    padding: 0 !important;
+
+    color: #FFFFFF !important;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+    font-size: 2rem !important;
+    font-weight: 400 !important;
+
+    line-height: 1.2 !important;
+
+    text-align: left !important;
+
+    white-space: normal !important;
+
+    letter-spacing: 0 !important;
 }
 
 
 /* =========================================================
-   DESIGN 01
-   Blue Header + Georgia State Silhouette
+   GEORGIA STATE GRAPHIC
    ========================================================= */
 
-[dir] .nx-theme-styles .nx-theme-form .ga-header-01 {
-    position: relative;
-    overflow: hidden;
-    min-height: 160px;
-    padding: 22px 32px;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(
-        120deg,
-        #235789 0%,
-        #164775 65%,
-        #0f3c65 100%
-    );
-    border-radius: 8px;
-    border-bottom: 6px solid #F7921E;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+.ga-header-01-state {
+    position: absolute !important;
+
+    top: 50% !important;
+    right: 28px !important;
+
+    transform: translateY(-50%) !important;
+
+    width: 140px !important;
+    height: 140px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    opacity: 0.18 !important;
+
+    z-index: 1 !important;
+
+    pointer-events: none !important;
 }
 
-[dir] .nx-theme-styles .nx-theme-form .ga-header-01-content {
-    position: relative;
-    z-index: 2;
-    width: 75%;
-}
 
-[dir] .nx-theme-styles .nx-theme-form .ga-header-01-logo {
-    display: block;
-    width: auto !important;
-    height: 82px !important;
-    max-width: 100% !important;
-}
+.ga-header-01-state img {
+    display: block !important;
 
-[dir] .nx-theme-styles .nx-theme-form .ga-header-01 .ga-header-title {
-    margin-top: 8px;
-    color: #FFFFFF !important;
-    font-family: Arial, Helvetica, sans-serif !important;
-    font-size: 2rem !important;
-    font-weight: 400 !important;
-    line-height: 1.2 !important;
-}
-
-[dir] .nx-theme-styles .nx-theme-form .ga-header-01-state {
-    position: absolute;
-    top: 50%;
-    right: 30px;
-    transform: translateY(-50%);
-    width: 135px;
-    height: 135px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.22;
-    z-index: 1;
-    pointer-events: none;
-}
-
-[dir] .nx-theme-styles .nx-theme-form .ga-header-01-state img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain;
+
+    max-width: 100% !important;
+    max-height: 100% !important;
+
+    object-fit: contain !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
 }
 
-@media (max-width: 700px) {
-    [dir] .nx-theme-styles .nx-theme-form .ga-header-01 {
-        min-height: 128px;
-        padding: 18px 20px;
+
+/* =========================================================
+   REMOVE NINTEX / EDITOR IMAGE SIDE EFFECTS
+   ========================================================= */
+
+/*
+Nintex rich-text/HTML controls sometimes add image classes
+or inherited rules. These override them specifically inside
+our custom header.
+*/
+
+.ga-header-01 img,
+.ga-header-01 img.image-inline,
+.ga-header-01 img.image_resized,
+.ga-header-01 img.header-logo {
+    float: none !important;
+    position: static;
+}
+
+
+/*
+Restore absolute positioning for the Georgia container.
+The actual image inside remains normal flow.
+*/
+
+.ga-header-01-state {
+    position: absolute !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .ga-header-01 {
+        min-height: 150px !important;
+
+        padding:
+            22px
+            26px !important;
     }
 
-    [dir] .nx-theme-styles .nx-theme-form .ga-header-01-content {
-        width: 82%;
+
+    .ga-header-01-content {
+        width: calc(100% - 145px) !important;
     }
 
-    [dir] .nx-theme-styles .nx-theme-form .ga-header-01-logo {
-        height: 54px !important;
+
+    .ga-header-01-logo {
+        height: 68px !important;
     }
 
-    [dir] .nx-theme-styles .nx-theme-form .ga-header-01 .ga-header-title {
-        font-size: 1.45rem !important;
+
+    .ga-header-01 .ga-header-title {
+        font-size: 1.7rem !important;
     }
 
-    [dir] .nx-theme-styles .nx-theme-form .ga-header-01-state {
-        right: 10px;
-        width: 90px;
-        height: 90px;
-        opacity: 0.12;
+
+    .ga-header-01-state {
+        width: 115px !important;
+        height: 115px !important;
+
+        right: 22px !important;
     }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ga-header-01 {
+        min-height: 125px !important;
+
+        padding:
+            18px
+            20px !important;
+
+        border-bottom-width: 5px !important;
+    }
+
+
+    .ga-header-01-content {
+        width: calc(100% - 75px) !important;
+    }
+
+
+    .ga-header-01-logo {
+        height: 50px !important;
+    }
+
+
+    .ga-header-01 .ga-header-title {
+        margin-top: 7px !important;
+
+        font-size: 1.3rem !important;
+        line-height: 1.25 !important;
+    }
+
+
+    .ga-header-01-state {
+        width: 80px !important;
+        height: 80px !important;
+
+        right: 8px !important;
+
+        opacity: 0.11 !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .ga-header-01 {
+        padding:
+            16px
+            16px !important;
+    }
+
+
+    .ga-header-01-content {
+        width: calc(100% - 50px) !important;
+    }
+
+
+    .ga-header-01-logo {
+        height: 42px !important;
+    }
+
+
+    .ga-header-01 .ga-header-title {
+        font-size: 1.15rem !important;
+    }
+
+
+    .ga-header-01-state {
+        width: 65px !important;
+        height: 65px !important;
+
+        right: 2px !important;
+    }
+
 }

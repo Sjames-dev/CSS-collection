@@ -123,12 +123,12 @@
     position: absolute !important;
 
     top: 50% !important;
-    right: 145px !important;
+    right: 185px !important;
 
     transform: translateY(-50%) !important;
 
-    width: 100px !important;
-    height: 118px !important;
+    width: 105px !important;
+    height: 125px !important;
 
     display: flex !important;
     align-items: center !important;
@@ -162,44 +162,46 @@
    4. RIGHT-SIDE DIAGONAL BRAND BANDS
    ========================================================= */
 
-.ga-header-02-bands {
+.ga-header-02::after {
+    content: "" !important;
+
     position: absolute !important;
 
     top: -45px !important;
-    right: -68px !important;
+    right: -35px !important;
 
-    width: 205px !important;
-    height: 260px !important;
+    width: 175px !important;
+    height: 265px !important;
 
-    display: flex !important;
-    gap: 0 !important;
+    background:
+        linear-gradient(
+            110deg,
 
-    transform: skewX(-24deg) !important;
+            transparent 0%,
+            transparent 9%,
+
+            #D7EAED 9%,
+            #D7EAED 30%,
+
+            transparent 30%,
+            transparent 34%,
+
+            #235789 34%,
+            #235789 59%,
+
+            transparent 59%,
+            transparent 63%,
+
+            #F7921E 63%,
+            #F7921E 84%,
+
+            transparent 84%,
+            transparent 100%
+        ) !important;
 
     z-index: 2 !important;
 
     pointer-events: none !important;
-}
-
-.ga-header-02-bands .band {
-    display: block !important;
-    height: 100% !important;
-    flex: 0 0 auto !important;
-}
-
-.ga-header-02-bands .band-lightblue {
-    width: 58px !important;
-    background-color: #D7EAED !important;
-}
-
-.ga-header-02-bands .band-blue {
-    width: 62px !important;
-    background-color: #235789 !important;
-}
-
-.ga-header-02-bands .band-orange {
-    width: 58px !important;
-    background-color: #F7921E !important;
 }
 
 

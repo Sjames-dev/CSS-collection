@@ -1,0 +1,192 @@
+/* Design 07: complete form theme. Replace previous custom CSS with this file.
+   Theme selectors match the nx-theme classes used by the existing form.
+   Header rules also work outside the Nintex shell for local previews. */
+
+.nx-theme-styles {
+    --ga-navy: #073b65;
+    --ga-blue: #175a89;
+    --ga-orange: #f7921e;
+    --ga-border: #cbd8e2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+[dir] .nx-theme-styles .nx-theme-page,
+[dir] .nx-theme-styles.nx-theme-page {
+    background: #eef3f7;
+    color: #213b50;
+}
+
+[dir] .nx-theme-styles .nx-theme-form {
+    background: #ffffff;
+    border: 1px solid #d8e2ea;
+    border-radius: 10px;
+    color: #213b50;
+    box-shadow: 0 4px 18px rgba(7, 59, 101, .08);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-group-control-container,
+[dir] .nx-theme-styles .nx-theme-form .nx-repeating-section-container {
+    background: #f6f9fb;
+    border: 1px solid #cbd8e2;
+    border-radius: 6px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-group-control-body,
+[dir] .nx-theme-styles .nx-theme-form .nx-repeating-section-body {
+    background: #f6f9fb;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    color: #073b65;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: start;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* Excludes checkbox, radio, file and action inputs. Keep Nintex validation colors. */
+[dir] .nx-theme-styles .nx-theme-form input:where(:not([type]), [type="text"], [type="email"], [type="number"], [type="tel"], [type="url"], [type="password"], [type="search"], [type="date"], [type="datetime-local"]),
+[dir] .nx-theme-styles .nx-theme-form textarea,
+[dir] .nx-theme-styles .nx-theme-form select {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-height: 42px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form input:focus-visible,
+[dir] .nx-theme-styles .nx-theme-form textarea:focus-visible,
+[dir] .nx-theme-styles .nx-theme-form select:focus-visible {
+    outline: 2px solid #175a89;
+    outline-offset: 2px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1,
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2 {
+    box-sizing: border-box;
+    width: auto;
+    max-width: 100%;
+    min-width: 140px;
+    min-height: 44px;
+    padding: 10px 26px;
+    border: 1px solid #073b65;
+    border-radius: 5px;
+    background: #073b65;
+    color: #ffffff;
+    font: 700 16px/1.25 Arial, Helvetica, sans-serif;
+    text-transform: none;
+    cursor: pointer;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2 {
+    background: #ffffff;
+    color: #073b65;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover:not(:disabled):not([aria-disabled="true"]) {
+    background: #175a89;
+    border-color: #175a89;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:hover:not(:disabled):not([aria-disabled="true"]) {
+    background: #eaf2f7;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:focus-visible,
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:focus-visible {
+    outline: 3px solid #f7921e;
+    outline-offset: 3px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:disabled,
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:disabled,
+[dir] .nx-theme-styles .nx-theme-form [aria-disabled="true"] {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+/* Bands are painted on the banner itself: no empty spans for an editor to strip.
+   At the reference width (562px), the banner is approximately 126px tall. */
+.ga-header.ga-header-07 {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    min-height: 126px;
+    padding: 15px 8%;
+    overflow: hidden;
+    border: 0;
+    border-radius: 8px;
+    background-color: #073b65;
+    background-image:
+        linear-gradient(120deg, transparent 0%, transparent 76%, #4185aa 76%, #4185aa 81%, #8bc1cb 81%, #8bc1cb 86%, #f9a01b 86%, #f9a01b 91%, transparent 91%),
+        linear-gradient(110deg, #07365e 0%, #064775 65%, #155c8c 100%);
+    box-shadow: 0 2px 5px rgba(7, 40, 66, .18);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+.ga-header-07 .ga-header-07-content {
+    position: relative;
+    width: 75%;
+    max-width: 480px;
+    margin: 0;
+    padding: 0;
+}
+
+.ga-header-07 .ga-header-07-brand {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+/* Both supplied PNGs have identical dimensions (1491 x 240).
+   Overlay only the full-color logo's orange symbol, leaving white letters. */
+.ga-header-07 .ga-header-07-brand .ga-header-07-logo,
+.ga-header-07 .ga-header-07-brand .ga-header-07-accent {
+    display: block;
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.ga-header-07 .ga-header-07-brand .ga-header-07-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: inset(0 23.8% 0 61.2%);
+    pointer-events: none;
+}
+
+.ga-header-07 .ga-header-title {
+    margin: 6px 0 0 !important;
+    padding: 0 !important;
+    color: #ffffff !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: clamp(16px, 2.5vw, 26px) !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 480px) {
+    .ga-header.ga-header-07 {
+        min-height: 104px;
+        padding: 18px 6%;
+    }
+
+    .ga-header-07 .ga-header-07-content {
+        width: 78%;
+    }
+}

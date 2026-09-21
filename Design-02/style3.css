@@ -1,0 +1,532 @@
+/* =========================================================
+   GA@WORK NINTEX FORM THEME — DESIGN 02
+   =========================================================
+   Brand palette:
+   Blue       #235789
+   Light Blue #90C3C8
+   Orange     #F7921E
+   Green      #7FA267
+   Yellow     #F3B700
+   Red        #A72608
+   Gray       #B3B3B3
+   Black      #000000
+   White      #FFFFFF
+   ========================================================= */
+
+
+/* =========================================================
+   1. PAGE + FORM SURFACES
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-theme-page {
+    background:
+        linear-gradient(
+            135deg,
+            #EAF4F5 0%,
+            #C8E1E3 52%,
+            #90C3C8 100%
+        ) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form {
+    background-color: #F7F7F7 !important;
+    border: 1px solid #235789 !important;
+    border-radius: 8px !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 14px rgba(35, 87, 137, 0.14) !important;
+}
+
+
+/* =========================================================
+   2. HEADER — DESIGN 02
+   ========================================================= */
+
+.ga-header {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.ga-header-02 {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 175px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    overflow: hidden !important;
+
+    padding: 24px 34px !important;
+
+    background-color: #FFFFFF !important;
+
+    border-radius: 9px !important;
+    border: 1px solid #E5E7EA !important;
+
+    box-shadow:
+        0 4px 11px rgba(0, 0, 0, 0.12) !important;
+
+    box-sizing: border-box !important;
+}
+
+.ga-header-02-content {
+    position: relative !important;
+    z-index: 5 !important;
+
+    width: calc(100% - 320px) !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+}
+
+.ga-header-02-logo {
+    display: block !important;
+
+    width: auto !important;
+    height: 74px !important;
+
+    max-width: 100% !important;
+
+    object-fit: contain !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.ga-header-02 .ga-header-title {
+    display: block !important;
+
+    margin: 8px 0 0 0 !important;
+    padding: 0 !important;
+
+    color: #000000 !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1.65rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+
+    text-align: left !important;
+    white-space: normal !important;
+}
+
+
+/* =========================================================
+   3. GEORGIA STATE GRAPHIC
+   ========================================================= */
+
+.ga-header-02-state {
+    position: absolute !important;
+
+    top: 50% !important;
+    right: 205px !important;
+
+    transform: translateY(-50%) !important;
+
+    width: 88px !important;
+    height: 105px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    z-index: 3 !important;
+
+    opacity: 0.72 !important;
+
+    pointer-events: none !important;
+}
+
+.ga-header-02-state img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: 100% !important;
+    max-height: 100% !important;
+
+    object-fit: contain !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+
+/* =========================================================
+   4. RIGHT-SIDE DIAGONAL BRAND BANDS
+   ========================================================= */
+
+.ga-header-02::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    top: -45px !important;
+    right: -28px !important;
+
+    width: 150px !important;
+    height: 260px !important;
+
+    background:
+        linear-gradient(
+            110deg,
+
+            transparent 0%,
+            transparent 10%,
+
+            #D7EAED 10%,
+            #D7EAED 29%,
+
+            transparent 29%,
+            transparent 33%,
+
+            #235789 33%,
+            #235789 58%,
+
+            transparent 58%,
+            transparent 62%,
+
+            #F7921E 62%,
+            #F7921E 82%,
+
+            transparent 82%,
+            transparent 100%
+        ) !important;
+
+    z-index: 2 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   5. LABELS + FIELD TEXT
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    color: #235789 !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+
+    text-align: left !important;
+
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form small,
+[dir] .nx-theme-styles .nx-theme-form .description {
+    color: #5F6368 !important;
+}
+
+
+/* =========================================================
+   6. INPUTS, TEXTAREAS + SELECTS
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-theme-form input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]),
+[dir] .nx-theme-styles .nx-theme-form textarea,
+[dir] .nx-theme-styles .nx-theme-form select {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+
+    border: 1px solid #B3B3B3 !important;
+    border-radius: 5px !important;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):hover,
+[dir] .nx-theme-styles .nx-theme-form textarea:hover,
+[dir] .nx-theme-styles .nx-theme-form select:hover {
+    border-color: #235789 !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):focus,
+[dir] .nx-theme-styles .nx-theme-form textarea:focus,
+[dir] .nx-theme-styles .nx-theme-form select:focus {
+    outline: none !important;
+    border-color: #235789 !important;
+    box-shadow: 0 0 0 3px rgba(144, 195, 200, 0.40) !important;
+}
+
+
+/* =========================================================
+   7. GROUP / SECTION CONTAINERS
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-group-control-container {
+    overflow: hidden !important;
+
+    background-color: #FFFFFF !important;
+
+    border: 1px solid #C9D8E4 !important;
+    border-radius: 7px !important;
+
+    box-shadow: 0 1px 4px rgba(35, 87, 137, 0.08) !important;
+}
+
+[dir] .nx-theme-styles .nx-group-control-container .nx-group-control-body {
+    background-color: #FFFFFF !important;
+}
+
+[dir] .nx-theme-styles .nx-group-control-container .nx-theme-label-1 {
+    color: #235789 !important;
+}
+
+
+/* =========================================================
+   8. REPEATING SECTIONS
+   ========================================================= */
+
+.nx-repeating-section-container {
+    background-color: #FFFFFF !important;
+
+    border: 1px solid #C9D8E4 !important;
+    border-left: 4px solid #90C3C8 !important;
+
+    border-radius: 7px !important;
+
+    box-shadow: 0 1px 4px rgba(35, 87, 137, 0.08) !important;
+}
+
+.nx-repeating-section-container .nx-repeating-section-body {
+    background-color: #FFFFFF !important;
+}
+
+
+/* =========================================================
+   9. PRIMARY BUTTONS
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
+    background-color: #235789 !important;
+    color: #FFFFFF !important;
+
+    border: 1px solid #235789 !important;
+    border-radius: 5px !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.025em !important;
+
+    text-transform: uppercase !important;
+
+    min-height: 42px !important;
+    padding: 8px 24px !important;
+
+    box-shadow: 0 2px 4px rgba(35, 87, 137, 0.18) !important;
+
+    transition:
+        background-color 0.15s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover {
+    background-color: #184773 !important;
+    border-color: #184773 !important;
+
+    transform: translateY(-1px) !important;
+
+    box-shadow: 0 4px 7px rgba(35, 87, 137, 0.25) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:focus {
+    outline: none !important;
+
+    box-shadow:
+        0 0 0 3px rgba(144, 195, 200, 0.50),
+        0 3px 6px rgba(35, 87, 137, 0.20) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 2px rgba(35, 87, 137, 0.20) !important;
+}
+
+
+/* =========================================================
+   10. SECONDARY BUTTON
+   ========================================================= */
+
+.ga-button-secondary {
+    background-color: #FFFFFF !important;
+    color: #235789 !important;
+
+    border: 2px solid #235789 !important;
+    border-radius: 5px !important;
+
+    font-weight: 700 !important;
+    padding: 8px 22px !important;
+}
+
+.ga-button-secondary:hover {
+    background-color: #EEF5F8 !important;
+}
+
+
+/* =========================================================
+   11. INFORMATION / WARNING CALLOUTS
+   ========================================================= */
+
+.ga-form-note {
+    background-color: #F0F7F8 !important;
+
+    border: 1px solid #90C3C8 !important;
+    border-left: 5px solid #235789 !important;
+
+    border-radius: 6px !important;
+
+    color: #000000 !important;
+
+    padding: 12px 16px !important;
+    margin: 12px 0 !important;
+}
+
+.ga-form-note strong,
+.ga-form-note .ga-form-note-title {
+    color: #235789 !important;
+}
+
+.ga-form-warning {
+    background-color: #FFF7E8 !important;
+
+    border: 1px solid #F3B700 !important;
+    border-left: 5px solid #F7921E !important;
+
+    border-radius: 6px !important;
+
+    color: #000000 !important;
+
+    padding: 12px 16px !important;
+}
+
+
+/* =========================================================
+   12. TABLES IN HTML / RICH-TEXT BLOCKS
+   ========================================================= */
+
+.ga-form-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    background-color: #FFFFFF !important;
+}
+
+.ga-form-table th {
+    background-color: #235789 !important;
+    color: #FFFFFF !important;
+    text-align: left !important;
+    padding: 10px 12px !important;
+}
+
+.ga-form-table td {
+    border-bottom: 1px solid #DADCE0 !important;
+    padding: 10px 12px !important;
+}
+
+.ga-form-table tr:nth-child(even) td {
+    background-color: #F5F9FA !important;
+}
+
+
+/* =========================================================
+   13. LINKS
+   ========================================================= */
+
+[dir] .nx-theme-styles .nx-theme-form a {
+    color: #235789 !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form a:hover {
+    color: #A72608 !important;
+}
+
+
+/* =========================================================
+   14. RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .ga-header-02 {
+        min-height: 150px !important;
+        padding: 21px 26px !important;
+    }
+
+    .ga-header-02-content {
+        width: calc(100% - 235px) !important;
+    }
+
+    .ga-header-02-logo {
+        height: 62px !important;
+    }
+
+    .ga-header-02 .ga-header-title {
+        font-size: 1.55rem !important;
+    }
+
+    .ga-header-02-state {
+        right: 118px !important;
+        width: 82px !important;
+        height: 98px !important;
+    }
+
+    .ga-header-02-bands {
+        right: -78px !important;
+        width: 180px !important;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .ga-header-02 {
+        min-height: 128px !important;
+        padding: 18px 20px !important;
+    }
+
+    .ga-header-02-content {
+        width: calc(100% - 95px) !important;
+    }
+
+    .ga-header-02-logo {
+        height: 48px !important;
+    }
+
+    .ga-header-02 .ga-header-title {
+        margin-top: 6px !important;
+        font-size: 1.25rem !important;
+    }
+
+    .ga-header-02-state {
+        display: none !important;
+    }
+
+    .ga-header-02-bands {
+        right: -115px !important;
+        width: 165px !important;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
+        width: 100% !important;
+    }
+
+}

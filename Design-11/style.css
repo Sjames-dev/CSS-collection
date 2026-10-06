@@ -116,86 +116,79 @@
     border-color: #175a89;
 }
 
-/* Row toolbar actions only. Higher priority overrides Nintex icon positioning.
-   Keep labeled Add new row and buttons inside row fields at their normal size. */
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-overlay, .nx-repeating-section-overlay) :is(.nx-theme-button-1, .nx-theme-button-2),
-[dir] .nx-theme-styles .nx-theme-form ntx-repeating-section :is(.nx-theme-button-1, .nx-theme-button-2):is([aria-label*="Duplicate" i], [aria-label*="Delete" i], [title*="Duplicate" i], [title*="Delete" i]) {
-    position: relative;
+/* Exact Nintex row-action classes. Keep labeled Add new row at normal size. */
+[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-remove-button, .ntx-repeating-section-duplicate-btn) {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    flex: 0 0 36px;
     box-sizing: border-box;
+    flex: 0 0 36px;
     width: 36px;
     min-width: 36px;
     height: 36px;
     min-height: 36px;
     padding: 0 !important;
-    background-color: #073b65 !important;
     border-color: #073b65 !important;
+    background-color: #073b65 !important;
     color: #ffffff !important;
-    font-size: 22px !important;
     line-height: 1 !important;
-    text-align: center !important;
     vertical-align: middle;
-    /* Match both colors even when delete is disabled at the minimum row count.
-       Native disabled/aria-disabled behavior and cursor remain in effect. */
+    /* Preserve native disabled behavior, with matching toolbar colors. */
     opacity: 1 !important;
 }
 
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-overlay, .nx-repeating-section-overlay) :is(.nx-theme-button-1, .nx-theme-button-2):hover:not(:disabled):not([aria-disabled="true"]),
-[dir] .nx-theme-styles .nx-theme-form ntx-repeating-section :is(.nx-theme-button-1, .nx-theme-button-2):is([aria-label*="Duplicate" i], [aria-label*="Delete" i], [title*="Duplicate" i], [title*="Delete" i]):hover:not(:disabled):not([aria-disabled="true"]) {
+[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-remove-button, .ntx-repeating-section-duplicate-btn):hover:not(:disabled):not([aria-disabled="true"]) {
     background-color: #175a89 !important;
     border-color: #175a89 !important;
 }
 
-/* Cover Nintex's span/font icons, image icons, and nested SVG wrappers.
-   Inline and platform icon rules can otherwise leave a tiny icon at top-left. */
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-overlay, .nx-repeating-section-overlay) :is(.nx-theme-button-1, .nx-theme-button-2) :is(span, i, svg, img),
-[dir] .nx-theme-styles .nx-theme-form ntx-repeating-section :is(.nx-theme-button-1, .nx-theme-button-2):is([aria-label*="Duplicate" i], [aria-label*="Delete" i], [title*="Duplicate" i], [title*="Delete" i]) :is(span, i, svg, img) {
+/* Size BOTH custom-element wrappers: SVG percentages depend on them. */
+[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-remove-button, .ntx-repeating-section-duplicate-btn) :is(ntx-icon, mat-icon) {
     position: static !important;
-    inset: auto !important;
-    float: none !important;
-    transform: none !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    flex: 0 0 22px !important;
-    box-sizing: border-box;
-    width: 22px !important;
-    height: 22px !important;
+    flex: 0 0 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
     margin: 0 !important;
     padding: 0 !important;
-    color: inherit !important;
-    font-size: 22px !important;
     line-height: 1 !important;
-    background-position: center !important;
-    background-size: 22px 22px !important;
-    background-repeat: no-repeat !important;
-    object-fit: contain;
+    color: inherit !important;
+    overflow: visible !important;
+    transform: none !important;
 }
 
-/* Some Nintex versions draw icons using pseudo-elements instead of SVG. */
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-overlay, .nx-repeating-section-overlay) :is(.nx-theme-button-1, .nx-theme-button-2)::before,
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-overlay, .nx-repeating-section-overlay) :is(.nx-theme-button-1, .nx-theme-button-2)::after,
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-overlay, .nx-repeating-section-overlay) :is(.nx-theme-button-1, .nx-theme-button-2) :is(span, i)::before,
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-overlay, .nx-repeating-section-overlay) :is(.nx-theme-button-1, .nx-theme-button-2) :is(span, i)::after {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: translate(-50%, -50%) !important;
-    width: 22px !important;
-    height: 22px !important;
+/* The supplied SVG viewBox is 36x36, but trash artwork is only ~12x16
+   and duplicate artwork ~12x14. Enlarge the centered artwork, not the button. */
+[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-remove-button, .ntx-repeating-section-duplicate-btn) mat-icon > svg {
+    display: block !important;
+    width: 24px !important;
+    height: 24px !important;
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 22px !important;
-    line-height: 22px !important;
-    color: inherit !important;
-    background-position: center !important;
-    background-size: 22px 22px !important;
-    background-repeat: no-repeat !important;
+    fill: currentColor;
+    transform-box: view-box;
+    transform-origin: 50% 50%;
+    transform: scale(2.1) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ntx-repeating-section-duplicate-btn mat-icon > svg {
+    transform: scale(2.4) !important;
+}
+
+/* Keep Nintex's icon text hidden in the standalone preview too. */
+[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-remove-button, .ntx-repeating-section-duplicate-btn) .nx-hide-icon-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 
 [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:focus-visible,

@@ -116,81 +116,6 @@
     border-color: #175a89;
 }
 
-/* Exact Nintex row-action classes. Keep labeled Add new row at normal size. */
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-remove-button, .ntx-repeating-section-duplicate-btn) {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-sizing: border-box;
-    flex: 0 0 36px;
-    width: 36px;
-    min-width: 36px;
-    height: 36px;
-    min-height: 36px;
-    padding: 0 !important;
-    border-color: #073b65 !important;
-    background-color: #073b65 !important;
-    color: #ffffff !important;
-    line-height: 1 !important;
-    vertical-align: middle;
-    /* Preserve native disabled behavior, with matching toolbar colors. */
-    opacity: 1 !important;
-}
-
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-remove-button, .ntx-repeating-section-duplicate-btn):hover:not(:disabled):not([aria-disabled="true"]) {
-    background-color: #175a89 !important;
-    border-color: #175a89 !important;
-}
-
-/* Size BOTH custom-element wrappers: SVG percentages depend on them. */
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-remove-button, .ntx-repeating-section-duplicate-btn) :is(ntx-icon, mat-icon) {
-    position: static !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex: 0 0 24px !important;
-    width: 24px !important;
-    height: 24px !important;
-    min-width: 24px !important;
-    min-height: 24px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1 !important;
-    color: inherit !important;
-    overflow: visible !important;
-    transform: none !important;
-}
-
-/* The supplied SVG viewBox is 36x36, but trash artwork is only ~12x16
-   and duplicate artwork ~12x14. Enlarge the centered artwork, not the button. */
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-remove-button, .ntx-repeating-section-duplicate-btn) mat-icon > svg {
-    display: block !important;
-    width: 24px !important;
-    height: 24px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    fill: currentColor;
-    transform-box: view-box;
-    transform-origin: 50% 50%;
-    transform: scale(2.8) !important;
-}
-
-[dir] .nx-theme-styles .nx-theme-form .ntx-repeating-section-duplicate-btn mat-icon > svg {
-    transform: scale(3.2) !important;
-}
-
-/* Keep Nintex's icon text hidden in the standalone preview too. */
-[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-remove-button, .ntx-repeating-section-duplicate-btn) .nx-hide-icon-text {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-}
-
 [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:focus-visible,
 [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:focus-visible {
     outline: 3px solid #f7921e;
@@ -204,36 +129,83 @@
     cursor: not-allowed;
 }
 
-[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) :is(ntx-icon, mat-icon.mat-icon) {
+/* Repeating-row actions: one implementation for the confirmed Nintex markup.
+   Anchor wrappers at button center. Scale SVG PATHS around (18,18), keeping
+   the SVG viewport fixed so enlarged artwork cannot shift toward a corner. */
+[dir] .nx-theme-styles .nx-theme-form button.btn-icon-only:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) {
+    position: relative !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    flex: 0 0 24px !important;
+    box-sizing: border-box;
+    flex: 0 0 36px;
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 0 !important;
+    background-color: #073b65 !important;
+    border-color: #073b65 !important;
+    color: #ffffff !important;
+    line-height: 1;
+    vertical-align: middle;
+    opacity: 1 !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form button.btn-icon-only:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button):hover:not(:disabled):not([aria-disabled="true"]) {
+    background-color: #175a89 !important;
+    border-color: #175a89 !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form button.btn-icon-only:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) ntx-icon {
+    position: absolute !important;
+    inset: auto !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: block !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: inherit !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form button.btn-icon-only:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) :is(mat-icon, svg) {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    box-sizing: border-box;
     width: 24px !important;
     height: 24px !important;
     min-width: 24px !important;
     min-height: 24px !important;
     margin: 0 !important;
     padding: 0 !important;
-    overflow: visible !important;
+    transform: none !important;
     color: inherit !important;
-}
-
-[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) ntx-icon mat-icon.mat-icon > svg {
-    display: block !important;
-    flex: 0 0 24px !important;
-    width: 24px !important;
-    height: 24px !important;
-    margin: 0 !important;
-    padding: 0 !important;
     fill: currentColor !important;
-    transform-box: view-box !important;
-    transform-origin: 50% 50% !important;
-    transform: scale(2.8) !important;
+    line-height: 1 !important;
+    overflow: visible !important;
 }
 
-[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2.ntx-repeating-section-duplicate-btn ntx-icon mat-icon.mat-icon > svg {
-    transform: scale(3.2) !important;
+/* 36x36 source: trash occupies y=10..26; duplicate y=11..25.
+   These matrices yield ~22px tall artwork inside a fixed 24px viewport.
+   Explicit SVG coordinates avoid browser transform-origin differences. */
+[dir] .nx-theme-styles .nx-theme-form button.btn-icon-only.ntx-repeating-section-remove-button svg path {
+    transform-origin: 0 0 !important;
+    transform-box: view-box !important;
+    transform: matrix(2.1, 0, 0, 2.1, -19.8, -19.8) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form button.btn-icon-only.ntx-repeating-section-duplicate-btn svg path {
+    transform-origin: 0 0 !important;
+    transform-box: view-box !important;
+    transform: matrix(2.4, 0, 0, 2.4, -25.2, -25.2) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form button.btn-icon-only:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) .nx-hide-icon-text {
+    display: none !important;
 }
 
 /* Image Backdrop: navy field, Capitol photograph, watermark and teal rule. */
@@ -339,38 +311,3 @@
     .ga-header-11 .ga-header-11-photo { width: 100% !important; object-position: 70% center; opacity: .8; }
     .ga-header-11 .ga-header-11-content::after { margin-top: 12px; }
 }
-
-/* Append AFTER all existing Nintex custom CSS. Overrides the older 22px /
-   transform:none !important rule, including its higher-specificity selectors. */
-[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) :is(ntx-icon, mat-icon.mat-icon) {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex: 0 0 24px !important;
-    width: 24px !important;
-    height: 24px !important;
-    min-width: 24px !important;
-    min-height: 24px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: visible !important;
-    color: inherit !important;
-}
-
-[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) ntx-icon mat-icon.mat-icon > svg {
-    display: block !important;
-    flex: 0 0 24px !important;
-    width: 24px !important;
-    height: 24px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    fill: currentColor !important;
-    transform-box: view-box !important;
-    transform-origin: 50% 50% !important;
-    transform: scale(2.8) !important;
-}
-
-[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2.ntx-repeating-section-duplicate-btn ntx-icon mat-icon.mat-icon > svg {
-    transform: scale(3.2) !important;
-}
-

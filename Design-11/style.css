@@ -172,11 +172,11 @@
     fill: currentColor;
     transform-box: view-box;
     transform-origin: 50% 50%;
-    transform: scale(2.1) !important;
+    transform: scale(2.8) !important;
 }
 
 [dir] .nx-theme-styles .nx-theme-form .ntx-repeating-section-duplicate-btn mat-icon > svg {
-    transform: scale(2.4) !important;
+    transform: scale(3.2) !important;
 }
 
 /* Keep Nintex's icon text hidden in the standalone preview too. */

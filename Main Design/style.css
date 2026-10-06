@@ -1,0 +1,307 @@
+/* Design 11 v3 - complete Nintex theme; replaces earlier themes/icon patches.
+   Reference: https://help.nintex.com/en-US/nwc/Content/Designer/CustomCSSGuidelines.htm
+   Use built-in nx-theme classes globally and ntx control elements for exceptions.
+   No additional classes need to be assigned to form controls. */
+
+[dir] .nx-theme-styles .nx-theme-form {
+    --ga-navy: #073b65;
+    --ga-blue: #175a89;
+    --ga-orange: #f7921e;
+    --ga-border: #cbd8e2;
+    --ga-row-button-size: 36px;
+    --ga-row-icon-size: 24px;
+    background: #ffffff;
+    border: 1px solid #d8e2ea;
+    border-radius: 10px;
+    color: #213b50;
+    box-shadow: 0 4px 18px rgba(7, 59, 101, .08);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+[dir] .nx-theme-styles .nx-theme-page,
+[dir] .nx-theme-styles.nx-theme-page {
+    background: #eef3f7;
+    color: #213b50;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-group-control-container,
+[dir] .nx-theme-styles .nx-theme-form .nx-repeating-section-container {
+    background: #f6f9fb;
+    border: 1px solid var(--ga-border);
+    border-radius: 6px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-group-control-body,
+[dir] .nx-theme-styles .nx-theme-form .nx-repeating-section-body {
+    background: #f6f9fb;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    color: var(--ga-navy);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: start;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* Built-in text-input theme class; do not size dropdown search inputs,
+   checkbox/radio controls, or file/action inputs as ordinary text fields. */
+[dir] .nx-theme-styles .nx-theme-form :is(input, textarea).nx-theme-input-1:not(:where(.ng-select *, .k-dropdown *, .k-dropdownlist *, [role="combobox"] *, [type="checkbox"], [type="radio"], [type="file"], [type="button"], [type="submit"], [type="reset"], [type="hidden"])),
+[dir] .nx-theme-styles .nx-theme-form select {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-height: 42px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form :is(input, textarea).nx-theme-input-1:focus-visible:not(:where(.ng-select *, .k-dropdown *, .k-dropdownlist *, [role="combobox"] *)),
+[dir] .nx-theme-styles .nx-theme-form select:focus-visible {
+    outline: 2px solid var(--ga-blue);
+    outline-offset: 2px;
+}
+
+/* Composite dropdowns: focus belongs around the complete control, not its
+   internal search input. Keep option selection and validation styling intact. */
+[dir] .nx-theme-styles .nx-theme-form :is(.ng-select, .k-dropdown, .k-dropdownlist, [role="combobox"]):not(input):not(select):not(:where(.ng-select *, .k-dropdown *, .k-dropdownlist *)):focus-within {
+    outline: 2px solid var(--ga-blue);
+    outline-offset: 2px;
+    border-radius: 5px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ng-select .ng-input > input {
+    min-height: 0;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form :is(.ng-select, .k-dropdown, .k-dropdownlist, [role="combobox"]) input:focus,
+[dir] .nx-theme-styles .nx-theme-form :is(.ng-select, .k-dropdown, .k-dropdownlist, [role="combobox"]) :is(.ng-select-container, .k-dropdown-wrap, .k-input-inner):focus {
+    outline: none;
+    box-shadow: none;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ng-select.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+    box-shadow: none;
+}
+
+[dir] .nx-theme-styles .nx-theme-form :is(.nx-theme-button-1, .nx-theme-button-2) {
+    box-sizing: border-box;
+    width: auto;
+    max-width: 100%;
+    min-width: 140px;
+    min-height: 44px;
+    padding: 10px 26px;
+    border: 1px solid var(--ga-navy);
+    border-radius: 5px;
+    background: var(--ga-navy);
+    color: #ffffff;
+    font: 700 16px/1.25 Arial, Helvetica, sans-serif;
+    text-transform: none;
+    cursor: pointer;
+}
+
+[dir] .nx-theme-styles .nx-theme-form :is(.nx-theme-button-1, .nx-theme-button-2):hover:not(:disabled):not([aria-disabled="true"]) {
+    background: var(--ga-blue);
+    border-color: var(--ga-blue);
+}
+
+[dir] .nx-theme-styles .nx-theme-form :is(.nx-theme-button-1, .nx-theme-button-2):focus-visible {
+    outline: 3px solid var(--ga-orange);
+    outline-offset: 3px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form :is(.nx-theme-button-1, .nx-theme-button-2):is(:disabled, [aria-disabled="true"]) {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+/* Repeating-row actions: one implementation for the confirmed Nintex markup.
+   Anchor wrappers at button center. Scale SVG PATHS around (18,18), keeping
+   the SVG viewport fixed so enlarged artwork cannot shift toward a corner. */
+[dir] .nx-theme-styles .nx-theme-form ntx-repeating-section button:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box;
+    flex: 0 0 var(--ga-row-button-size);
+    width: var(--ga-row-button-size) !important;
+    min-width: var(--ga-row-button-size) !important;
+    height: var(--ga-row-button-size) !important;
+    min-height: var(--ga-row-button-size) !important;
+    padding: 0 !important;
+    background-color: var(--ga-navy) !important;
+    border-color: var(--ga-navy) !important;
+    color: #ffffff !important;
+    line-height: 1;
+    vertical-align: middle;
+    opacity: 1 !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form ntx-repeating-section button:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button):hover:not(:disabled):not([aria-disabled="true"]) {
+    background-color: var(--ga-blue) !important;
+    border-color: var(--ga-blue) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form ntx-repeating-section button:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) ntx-icon {
+    position: absolute !important;
+    inset: auto !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: block !important;
+    width: var(--ga-row-icon-size) !important;
+    height: var(--ga-row-icon-size) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: inherit !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form ntx-repeating-section button:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) :is(mat-icon, svg) {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    box-sizing: border-box;
+    width: var(--ga-row-icon-size) !important;
+    height: var(--ga-row-icon-size) !important;
+    min-width: var(--ga-row-icon-size) !important;
+    min-height: var(--ga-row-icon-size) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    color: inherit !important;
+    fill: currentColor !important;
+    line-height: 1 !important;
+    overflow: visible !important;
+}
+
+/* 36x36 source: trash occupies y=10..26; duplicate y=11..25.
+   These matrices yield ~22px tall artwork inside a fixed 24px viewport.
+   Explicit SVG coordinates avoid browser transform-origin differences. */
+[dir] .nx-theme-styles .nx-theme-form ntx-repeating-section button.ntx-repeating-section-remove-button svg path {
+    transform-origin: 0 0 !important;
+    transform-box: view-box !important;
+    transform: matrix(2.1, 0, 0, 2.1, -19.8, -19.8) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form ntx-repeating-section button.ntx-repeating-section-duplicate-btn svg path {
+    transform-origin: 0 0 !important;
+    transform-box: view-box !important;
+    transform: matrix(2.4, 0, 0, 2.4, -25.2, -25.2) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form ntx-repeating-section button:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) .nx-hide-icon-text {
+    display: none !important;
+}
+
+/* Image Backdrop: navy field, Capitol photograph, watermark and teal rule. */
+[dir] .nx-theme-styles .nx-theme-form .ga-header.ga-header-11 {
+    position: relative;
+    isolation: isolate;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 190px;
+    aspect-ratio: 3.4 / 1;
+    padding: 4.5% 5.5% 24px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: linear-gradient(105deg, #193f69, #245d91 65%, #437eac);
+    box-shadow: 0 2px 6px rgba(7, 40, 66, .18);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-11 .ga-header-11-photo {
+    position: absolute;
+    z-index: -3;
+    top: 0;
+    right: 0;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover;
+    object-position: center center;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header.ga-header-11::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(13, 40, 70, .18), transparent 65%);
+    pointer-events: none;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-11 .ga-header-11-content {
+    position: relative;
+    width: 62%;
+    max-width: 500px;
+    margin: 0;
+    padding: 0;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-11 .ga-header-11-brand {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-11 .ga-header-11-logo,
+[dir] .nx-theme-styles .nx-theme-form .ga-header-11 .ga-header-11-accent {
+    display: block;
+    box-sizing: border-box;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+/* Matching logo dimensions allow the orange power symbol to overlay the white O. */
+[dir] .nx-theme-styles .nx-theme-form .ga-header-11 .ga-header-11-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: inset(0 23.8% 0 61.2%);
+    pointer-events: none;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-11 .ga-header-title {
+    margin: 9px 0 0 !important;
+    padding: 0 !important;
+    color: #ffffff !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: clamp(17px, 2.5vw, 28px) !important;
+    font-weight: 400 !important;
+    line-height: 1.25 !important;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ga-header-11 .ga-header-11-content::after {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 2px;
+    margin-top: 16px;
+    background: #45c0cb;
+}
+
+@media (max-width: 480px) {
+    [dir] .nx-theme-styles .nx-theme-form .ga-header.ga-header-11 { min-height: 150px; aspect-ratio: auto; padding: 24px 5.5%; }
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-11 .ga-header-11-content { width: 74%; }
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-11 .ga-header-11-photo { width: 100% !important; object-position: 70% center; opacity: .8; }
+    [dir] .nx-theme-styles .nx-theme-form .ga-header-11 .ga-header-11-content::after { margin-top: 12px; }
+}

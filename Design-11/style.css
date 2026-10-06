@@ -204,6 +204,38 @@
     cursor: not-allowed;
 }
 
+[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) :is(ntx-icon, mat-icon.mat-icon) {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    color: inherit !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) ntx-icon mat-icon.mat-icon > svg {
+    display: block !important;
+    flex: 0 0 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    fill: currentColor !important;
+    transform-box: view-box !important;
+    transform-origin: 50% 50% !important;
+    transform: scale(2.8) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2.ntx-repeating-section-duplicate-btn ntx-icon mat-icon.mat-icon > svg {
+    transform: scale(3.2) !important;
+}
+
 /* Image Backdrop: navy field, Capitol photograph, watermark and teal rule. */
 .ga-header.ga-header-11 {
     position: relative;
@@ -306,5 +338,39 @@
     .ga-header-11 .ga-header-11-content { width: 74%; }
     .ga-header-11 .ga-header-11-photo { width: 100% !important; object-position: 70% center; opacity: .8; }
     .ga-header-11 .ga-header-11-content::after { margin-top: 12px; }
+}
+
+/* Append AFTER all existing Nintex custom CSS. Overrides the older 22px /
+   transform:none !important rule, including its higher-specificity selectors. */
+[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) :is(ntx-icon, mat-icon.mat-icon) {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    color: inherit !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2:is(.ntx-repeating-section-duplicate-btn, .ntx-repeating-section-remove-button) ntx-icon mat-icon.mat-icon > svg {
+    display: block !important;
+    flex: 0 0 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    fill: currentColor !important;
+    transform-box: view-box !important;
+    transform-origin: 50% 50% !important;
+    transform: scale(2.8) !important;
+}
+
+[dir] .nx-theme-styles .nx-theme-form button.btn.btn-icon-only.nx-theme-button-2.ntx-repeating-section-duplicate-btn ntx-icon mat-icon.mat-icon > svg {
+    transform: scale(3.2) !important;
 }
 

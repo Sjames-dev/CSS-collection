@@ -48,7 +48,7 @@
 }
 
 /* Excludes checkbox, radio, file and action inputs. Keep Nintex validation colors. */
-[dir] .nx-theme-styles .nx-theme-form input:where(:not([type]), [type="text"], [type="email"], [type="number"], [type="tel"], [type="url"], [type="password"], [type="search"], [type="date"], [type="datetime-local"]),
+[dir] .nx-theme-styles .nx-theme-form input:where(:not([type]), [type="text"], [type="email"], [type="number"], [type="tel"], [type="url"], [type="password"], [type="search"], [type="date"], [type="datetime-local"]):not(:where(.ng-select input, .k-dropdown input, .k-dropdownlist input, [role="combobox"] input)),
 [dir] .nx-theme-styles .nx-theme-form textarea,
 [dir] .nx-theme-styles .nx-theme-form select {
     box-sizing: border-box;
@@ -59,11 +59,38 @@
     font-size: 16px;
 }
 
-[dir] .nx-theme-styles .nx-theme-form input:focus-visible,
+[dir] .nx-theme-styles .nx-theme-form input:focus-visible:not(:where(.ng-select input, .k-dropdown input, .k-dropdownlist input, [role="combobox"] input)),
 [dir] .nx-theme-styles .nx-theme-form textarea:focus-visible,
 [dir] .nx-theme-styles .nx-theme-form select:focus-visible {
     outline: 2px solid #175a89;
     outline-offset: 2px;
+}
+
+/* Composite dropdowns: focus belongs around the complete control, not its
+   internal search input. Keep option selection and validation styling intact. */
+[dir] .nx-theme-styles .nx-theme-form :is(.ng-select, .k-dropdown, .k-dropdownlist, [role="combobox"]):not(input):not(select):not(:where(.ng-select *, .k-dropdown *, .k-dropdownlist *)):focus-within {
+    outline: 2px solid #175a89;
+    outline-offset: 2px;
+    border-radius: 5px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ng-select .ng-input > input {
+    min-height: 0;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form :is(.ng-select, .k-dropdown, .k-dropdownlist, [role="combobox"]) input:focus,
+[dir] .nx-theme-styles .nx-theme-form :is(.ng-select, .k-dropdown, .k-dropdownlist, [role="combobox"]) :is(.ng-select-container, .k-dropdown-wrap, .k-input-inner):focus {
+    outline: none;
+    box-shadow: none;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .ng-select.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+    box-shadow: none;
 }
 
 [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1,
@@ -83,18 +110,38 @@
     cursor: pointer;
 }
 
-[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2 {
-    background: #ffffff;
-    color: #073b65;
-}
-
-[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover:not(:disabled):not([aria-disabled="true"]) {
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover:not(:disabled):not([aria-disabled="true"]),
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:hover:not(:disabled):not([aria-disabled="true"]) {
     background: #175a89;
     border-color: #175a89;
 }
 
-[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:hover:not(:disabled):not([aria-disabled="true"]) {
-    background: #eaf2f7;
+/* Row toolbar actions only. Labeled Add new row and buttons in row fields
+   retain their normal dimensions. The overlay is Nintex's row-action area. */
+[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-overlay, .nx-repeating-section-overlay) :is(.nx-theme-button-1, .nx-theme-button-2),
+[dir] .nx-theme-styles .nx-theme-form ntx-repeating-section :is(.nx-theme-button-1, .nx-theme-button-2):is([aria-label*="Duplicate" i], [aria-label*="Delete" i], [title*="Duplicate" i], [title*="Delete" i]) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 36px;
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    min-height: 36px;
+    padding: 8px;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-overlay, .nx-repeating-section-overlay) :is(.nx-theme-button-1, .nx-theme-button-2) :is(svg, i, .fa, .material-icons) {
+    margin: 0;
+    color: inherit;
+    font-size: 18px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form :is(.ntx-repeating-section-overlay, .nx-repeating-section-overlay) :is(.nx-theme-button-1, .nx-theme-button-2) svg {
+    width: 18px;
+    height: 18px;
 }
 
 [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:focus-visible,
@@ -213,7 +260,4 @@
     .ga-header-11 .ga-header-11-photo { width: 100% !important; object-position: 70% center; opacity: .8; }
     .ga-header-11 .ga-header-11-content::after { margin-top: 12px; }
 }
-
-
-
 
